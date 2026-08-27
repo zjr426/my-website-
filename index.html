@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="zh-CN"><head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>品旗日度销售跟进 - 8月24日</title>
+<title>品旗日度销售跟进 - 8月26日</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -29,7 +31,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .section-toggle{font-size:12px;font-weight:400;color:#95a5a6;background:transparent;border:1px solid #e0e4e8;padding:3px 10px;border-radius:5px;cursor:pointer;transition:all .15s;flex-shrink:0}
 .section-toggle:hover{border-color:#5b8def;color:#5b8def}
 .section-content{transition:all .2s}
-.section-source{font-size:11px;color:#bdc3c7;margin-top:12px;padding-top:8px;border-top:1px solid #f0f3f7}
+
 .subsection{margin-bottom:16px}
 .subsection:last-child{margin-bottom:0}
 .subsection h3{font-size:13px;font-weight:600;color:#5b8def;margin-bottom:8px;padding:4px 10px;background:#f0f4ff;border-radius:5px;display:inline-block}
@@ -96,6 +98,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .export-fab{position:fixed;right:16px;bottom:16px;width:42px;height:42px;background:#5b8def;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;box-shadow:0 2px 10px rgba(91,141,239,.25);transition:all .2s;z-index:9999}
 .export-fab:hover{background:#4a7de0;transform:translateY(-2px);box-shadow:0 4px 14px rgba(91,141,239,.35)}
 
+.kpi-trend-box{margin-top:8px;padding-top:8px;border-top:1px solid #f0f3f7;overflow:visible}
+.kpi-trend-box canvas{width:100%!important;height:80px!important;overflow:visible}
+.kpi-card.rank-card{border-top-color:#e74c3c;background:linear-gradient(135deg,#fff5f5 0%,#fff 100%)}
+.ind-rank-cell{font-weight:600;color:#5b8def;white-space:nowrap}
+.ind-rank-cell:hover{background:#f0f4ff;border-radius:4px}
+.clickable-cell{cursor:pointer;transition:background .15s}
+.clickable-cell:hover{background:#e8f0fe;border-radius:4px}
+.trend-row td{padding:8px 12px!important;background:#f8faff!important;overflow:visible}
+.trend-row canvas{width:100%!important;height:100px!important;display:block;overflow:visible}
+.mini-trend-label{font-size:10px;color:#95a5a6;text-align:center;margin-bottom:2px}
+
 @media(max-width:768px){
 body{padding:10px}
 .container{max-width:100%}
@@ -154,14 +167,14 @@ body{padding:10px}
 }
 </style>
 </head>
-<body><script id="__embedded_data">window.__embeddedConclusions={"insight_5":["1️⃣前一日支付件数171为补差价订单，数据无异常;\n2️⃣昨日晚20爆发较弱，持续性拉升，跟价动作下，整体转化提升较快;"],"insight_12":["1️⃣前一日销量较少，Q2FD昨日销售表现增长较明显；两款型号晚20后转化率提升明显；\n2️⃣整体销量距目标仍有缺口，直播间沟通以及推广端重点跟进"],"insight_13":["1️⃣8.10-后访客/销量/等指标逐渐下滑趋势，昨日有明显拉升；\n2️⃣后续核心做好这波活动的销售稳定；"],"insight_1":[{"text":"1️⃣昨晚Q2FD销售渠道来源为搜索/关键词侧，受跟价影响，搜索端转化较高；","time":"2026-08-25 13:41"}],"insight_4":["昨日流失萤石DL20FVS较大，同为执手款该链接新增DL20F（无猫眼指纹版）价格806低价引流，依托DL20FVS主链权重，流失较大；"],"strategy":["1、品旗直播间开播沟通\n2、推广端V20F今天转化较好，流量拉升\n3、其它平台价格监控，及时跟进"]};</script>
+<body>
 <div class="container">
 
 <div class="header">
 <div><h1>品旗日度销售跟进</h1><div class="sub">德施曼智能门锁 · 全店 / Q2FD / V20F 日度分析</div></div>
 <div style="text-align:right">
-<div class="date-badge">8月24日（昨日） vs 8月23日（前日）</div>
-<div class="update-time">更新于 2026-08-25</div>
+<div class="date-badge">8月26日（昨日） vs 8月25日（前日）</div>
+<div class="update-time">更新于 2026-08-27</div>
 </div>
 </div>
 
@@ -174,66 +187,75 @@ body{padding:10px}
 <div class="section">
 <div class="section-title"><span class="title-group">全店数据概览<span class="badge">核心KPI · 已剔除YB及低额订单</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
-<div class="kpi-grid"><div class="kpi-card big-change">
+<div class="kpi-grid"><div class="kpi-card rank-card" data-trend="[10, 16, 15]" data-trend-label="店铺行业排名" data-trend-invert="1" data-trend-fmt="rank" data-trend-dates="[&quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" onclick="toggleKpiTrend(this)" style="cursor:pointer;border-top-color:#e74c3c">
+            <div class="kpi-label">行业店铺排名</div>
+            <div class="kpi-value">第15名</div>
+            <div class="kpi-hb"><span class="up">↑1</span> <span style="font-size:10px;color:#95a5a6;font-weight:400">前日第16名</span></div>
+            <div class="kpi-sub">访客 2500 ~ 5000 · 50 ~ 100支付 · 40款在售</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[28545.370000000003, 79429.87, 56047.56000000001, 53272.42999999999]" data-trend-label="支付金额" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="amount" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">支付金额</div>
-            <div class="kpi-value">¥79,429.9</div>
-            <div class="kpi-hb up">+178.26%</div>
-            <div class="kpi-sub">前日 ¥28,545.4</div>
-        </div><div class="kpi-card big-change">
+            <div class="kpi-value">¥53,272.4</div>
+            <div class="kpi-hb down">-4.95%</div>
+            <div class="kpi-sub">前日 ¥56,047.6</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[20495.58, 54536.869999999995, 45432.850000000006, 27350.020000000004]" data-trend-label="净支付金额" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="amount" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">净支付金额</div>
-            <div class="kpi-value">¥54,536.9</div>
-            <div class="kpi-hb up">+166.09%</div>
-            <div class="kpi-sub">前日 ¥20,495.6</div>
-        </div><div class="kpi-card ">
+            <div class="kpi-value">¥27,350.0</div>
+            <div class="kpi-hb down">-39.8%</div>
+            <div class="kpi-sub">前日 ¥45,432.9</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[4146.0, 5279.0, 5015.0, 4079.0]" data-trend-label="UV(访客数)" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="int" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">UV(访客数)</div>
-            <div class="kpi-value">5,279</div>
-            <div class="kpi-hb up">+27.33%</div>
-            <div class="kpi-sub">前日 4,146</div>
-        </div><div class="kpi-card big-change">
+            <div class="kpi-value">4,079</div>
+            <div class="kpi-hb down">-18.66%</div>
+            <div class="kpi-sub">前日 5,015</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[31.0, 96.0, 60.0, 56.0]" data-trend-label="支付件数" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="int" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">支付件数</div>
-            <div class="kpi-value">96</div>
-            <div class="kpi-hb up">+209.68%</div>
-            <div class="kpi-sub">前日 31</div>
-        </div><div class="kpi-card big-change">
+            <div class="kpi-value">56</div>
+            <div class="kpi-hb down">-6.67%</div>
+            <div class="kpi-sub">前日 60</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[31.0, 89.0, 52.0, 46.0]" data-trend-label="支付买家数" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="int" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">支付买家数</div>
-            <div class="kpi-value">89</div>
-            <div class="kpi-hb up">+187.1%</div>
-            <div class="kpi-sub">前日 31</div>
-        </div><div class="kpi-card ">
+            <div class="kpi-value">46</div>
+            <div class="kpi-hb down">-11.54%</div>
+            <div class="kpi-sub">前日 52</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[920.82, 892.47, 1077.84, 1158.1]" data-trend-label="客单价" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="amount" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">客单价</div>
-            <div class="kpi-value">¥892.5</div>
-            <div class="kpi-hb down">-3.08%</div>
-            <div class="kpi-sub">前日 ¥920.8</div>
-        </div><div class="kpi-card big-change">
+            <div class="kpi-value">¥1,158.1</div>
+            <div class="kpi-hb up">+7.45%</div>
+            <div class="kpi-sub">前日 ¥1,077.8</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[0.75, 1.69, 1.04, 1.13]" data-trend-label="支付转化率" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="pct" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">支付转化率</div>
-            <div class="kpi-value">1.7%</div>
-            <div class="kpi-hb up">+125.33%</div>
-            <div class="kpi-sub">前日 0.8%</div>
-        </div><div class="kpi-card big-change">
+            <div class="kpi-value">1.1%</div>
+            <div class="kpi-hb up">+8.65%</div>
+            <div class="kpi-sub">前日 1.0%</div>
+            <div class="kpi-trend-box" style="display:none"></div>
+        </div><div class="kpi-card " data-trend="[198.0, 323.0, 276.0, 216.0]" data-trend-label="加购人数" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-fmt="int" onclick="toggleKpiTrend(this)" style="cursor:pointer">
             <div class="kpi-label">加购人数</div>
-            <div class="kpi-value">323</div>
-            <div class="kpi-hb up">+63.13%</div>
-            <div class="kpi-sub">前日 198</div>
-        </div><div class="kpi-card ">
-            <div class="kpi-label">退款金额</div>
-            <div class="kpi-value">¥28,408.8</div>
-            <div class="kpi-hb up">+41.03%</div>
-            <div class="kpi-sub">前日 ¥20,143.9</div>
+            <div class="kpi-value">216</div>
+            <div class="kpi-hb down">-21.74%</div>
+            <div class="kpi-sub">前日 276</div>
+            <div class="kpi-trend-box" style="display:none"></div>
         </div><div class="kpi-card ">
             <div class="kpi-label">推广总花费</div>
-            <div class="kpi-value">¥3,491.5</div>
-            <div class="kpi-hb up">+38.87%</div>
-            <div class="kpi-sub">前日 ¥2,514.2</div>
+            <div class="kpi-value">¥2,016.0</div>
+            <div class="kpi-hb down">-33.38%</div>
+            <div class="kpi-sub">前日 ¥3,026.4</div>
+            <div class="kpi-trend-box" style="display:none"></div>
         </div></div>
 <div class="insight-block" data-uid="insight_5">
 <div class="insight" id="insight_5_original"><strong>全店核心洞察：</strong>
-支付金额 <span class="tag up">+178.26%</span>，
-UV <span class="tag up">+27.33%</span>，
-支付件数 <span class="tag up">+209.68%</span>，
-客单价 <span class="tag down">-3.08%</span>。
-净支付金额 ¥54,536.9，退款金额 ¥28,408.8。<br><strong>重大变动：</strong>支付金额 <span class="tag up">+178.26%</span>、支付件数 <span class="tag up">+209.68%</span>、净支付金额 <span class="tag up">+166.09%</span></div>
-<div class="insight-conclusions" id="insight_5_conclusions"><div class="conclusion-item"><div class="conclusion-text">1️⃣前一日支付件数171为补差价订单，数据无异常;
-2️⃣昨日晚20爆发较弱，持续性拉升，跟价动作下，整体转化提升较快;</div><button class="btn-delete" onclick="deleteConclusion('insight_5',0)" title="删除">✕</button></div></div>
+支付金额 <span class="tag down">-4.95%</span>，
+UV <span class="tag down">-18.66%</span>，
+支付件数 <span class="tag down">-6.67%</span>，
+客单价 <span class="tag up">+7.45%</span>。
+净支付金额 ¥27,350.0，退款金额 ¥29,344.3。</div>
+<div class="insight-conclusions" id="insight_5_conclusions"></div>
 <div class="insight-edit-area" id="insight_5_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_5_textarea" placeholder="输入你的分析结论..."></textarea>
 <div class="insight-edit-actions">
@@ -246,100 +268,119 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 </div>
-<div class="section-source">数据来源：全店数据.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <div class="section">
 <div class="section-title"><span class="title-group">全店TOP10商品排名<span class="badge">剔除YB及&lt;400元订单</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
-<div class="table-wrap"><table class="data-table">
+<div class="table-wrap"><table class="data-table" id="top10-table">
         <thead><tr class="group-header">
-            <th>商品名称</th><th>型号</th><th>访客</th><th>支付件数</th><th>支付金额</th><th>转化率</th><th>排名变化</th>
+            <th>商品名称</th><th>型号</th><th>访客</th><th>支付件数</th><th>支付金额</th><th>转化率</th><th>排名变化</th><th>行业排名</th>
         </tr></thead>
         <tbody><tr>
             <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼智能门锁人脸猫眼电子锁指纹锁密码锁家用防盗门锁小嘀V20F</td>
             <td>小嘀 V20F</td>
-            <td>1,906</td>
-            <td>35</td>
-            <td class="val-y">¥31,075</td>
-            <td>1.68%</td>
+            <td class="clickable-cell" data-trend="[1870.0, 1906.0, 2400.0, 1734.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20F访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1,734</td>
+            <td class="clickable-cell" data-trend="[17.0, 35.0, 28.0, 24.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20F支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">24</td>
+            <td class="val-y clickable-cell" data-trend="[14073.0, 31075.0, 24585.99, 21094.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20F支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥21,094.0</td>
+            <td class="clickable-cell" data-trend="[0.91, 1.68, 1.0, 1.15]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20F转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">1.1%</td>
             <td><span class="neutral">—</span></td>
-        </tr><tr>
+            <td class="ind-rank-cell" data-trend="[63, 60, 75]" data-trend-dates="[&quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20F行业排名" data-trend-fmt="rank" data-trend-invert="1" onclick="toggleProductTrend(this)" style="cursor:pointer">第75名 <span class="down">↓15</span></td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
             <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼智能门锁指纹人脸电子锁家用防盗智能锁密码锁指纹锁Q2FD</td>
             <td>德施曼</td>
-            <td>2,831</td>
-            <td>41</td>
-            <td class="val-y">¥29,617</td>
-            <td>1.41%</td>
-            <td><span class="up">↑1</span></td>
-        </tr><tr>
+            <td class="clickable-cell" data-trend="[2355.0, 2831.0, 2294.0, 1975.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1,975</td>
+            <td class="clickable-cell" data-trend="[8.0, 41.0, 18.0, 17.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">17</td>
+            <td class="val-y clickable-cell" data-trend="[5664.0, 29617.0, 14025.71, 12962.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥12,962.0</td>
+            <td class="clickable-cell" data-trend="[0.34, 1.41, 0.74, 0.86]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">0.9%</td>
+            <td><span class="neutral">—</span></td>
+            <td class="ind-rank-cell" data-trend="[66, 112, 125]" data-trend-dates="[&quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼行业排名" data-trend-fmt="rank" data-trend-invert="1" onclick="toggleProductTrend(this)" style="cursor:pointer">第125名 <span class="down">↓13</span></td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
             <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼智能门锁家用指纹锁智能锁人脸识别掌静脉猫眼大屏Q2FV</td>
             <td>德施曼 Q2FV</td>
-            <td>273</td>
-            <td>4</td>
-            <td class="val-y">¥4,336.9</td>
-            <td>1.47%</td>
-            <td><span class="good">NEW</span></td>
-        </tr><tr>
-            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼指纹锁家用防盗门密码锁机械密码电子智能锁小嘀V20</td>
-            <td>小嘀 V20</td>
-            <td>286</td>
-            <td>7</td>
-            <td class="val-y">¥4,117</td>
-            <td>2.45%</td>
+            <td class="clickable-cell" data-trend="[223.0, 273.0, 210.0, 194.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2FV访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">194</td>
+            <td class="clickable-cell" data-trend="[0.0, 4.0, 3.0, 6.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2FV支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">6</td>
+            <td class="val-y clickable-cell" data-trend="[0.0, 4336.89, 3298.89, 6189.63]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2FV支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥6,189.6</td>
+            <td class="clickable-cell" data-trend="[0.0, 1.47, 1.43, 2.06]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2FV转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">2.1%</td>
             <td><span class="up">↑1</span></td>
-        </tr><tr>
-            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼密码锁人脸识别指纹锁家用猫眼双摄防盗智能门锁Q2F双摄</td>
-            <td>德施曼 Q2F</td>
-            <td>173</td>
-            <td>3</td>
-            <td class="val-y">¥3,772</td>
-            <td>1.73%</td>
+            <td class="ind-rank-cell" data-trend="[0, 0, 220]" data-trend-dates="[&quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2FV行业排名" data-trend-fmt="rank" data-trend-invert="1" onclick="toggleProductTrend(this)" style="cursor:pointer">第220名 <span class="good">NEW</span></td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
+            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼智能门锁人脸猫眼大屏智能锁密码锁大圣Q5FPro2.0版</td>
+            <td>德施曼 Q5FPro2</td>
+            <td class="clickable-cell" data-trend="[123.0, 134.0, 144.0, 124.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro2访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">124</td>
+            <td class="clickable-cell" data-trend="[3.0, 0.0, 4.0, 2.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro2支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">2</td>
+            <td class="val-y clickable-cell" data-trend="[6458.37, 0.0, 8321.62, 4160.81]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro2支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥4,160.8</td>
+            <td class="clickable-cell" data-trend="[2.44, 0.0, 2.08, 1.61]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro2转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">1.6%</td>
             <td><span class="down">↓1</span></td>
-        </tr><tr>
-            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼Q2FV智能3D人脸掌静脉猫眼大屏指纹</td>
-            <td>德施曼 Q2FV</td>
-            <td>42</td>
-            <td>2</td>
-            <td class="val-y">¥2,094</td>
-            <td>2.38%</td>
-            <td><span class="good">NEW</span></td>
-        </tr><tr>
-            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">【田栩宁专属款】德施曼智能锁Q5FPRO(新性能版)-计入田栩宁销量</td>
-            <td>德施曼 Q5FPRO</td>
-            <td>67</td>
-            <td>1</td>
-            <td class="val-y">¥1,395</td>
-            <td>1.49%</td>
-            <td><span class="good">NEW</span></td>
-        </tr><tr>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
             <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">【田栩宁专属款】德施曼智能锁U3F含田栩宁语音包-计入田栩宁销量</td>
             <td>德施曼 U3F</td>
-            <td>20</td>
-            <td>1</td>
-            <td class="val-y">¥1,179</td>
-            <td>5.00%</td>
+            <td class="clickable-cell" data-trend="[14.0, 20.0, 25.0, 23.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">23</td>
+            <td class="clickable-cell" data-trend="[0.0, 1.0, 0.0, 2.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">2</td>
+            <td class="val-y clickable-cell" data-trend="[0.0, 1179.0, 0.0, 2358.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥2,358.0</td>
+            <td class="clickable-cell" data-trend="[0.0, 5.0, 0.0, 4.35]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">4.3%</td>
             <td><span class="good">NEW</span></td>
-        </tr><tr>
-            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼智能门锁可视猫眼大屏家用防盗门指纹密码智能锁小嘀Q2M</td>
-            <td>小嘀 Q2M</td>
-            <td>75</td>
-            <td>1</td>
-            <td class="val-y">¥1,056.0</td>
-            <td>1.33%</td>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
+            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼3D人脸识别智能锁指纹锁家用防盗门智能门锁Q5FPro双摄版</td>
+            <td>德施曼 Q5FPro</td>
+            <td class="clickable-cell" data-trend="[19.0, 28.0, 14.0, 25.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">25</td>
+            <td class="clickable-cell" data-trend="[0.0, 0.0, 0.0, 1.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1</td>
+            <td class="val-y clickable-cell" data-trend="[0.0, 0.0, 0.0, 2178.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥2,178.0</td>
+            <td class="clickable-cell" data-trend="[0.0, 0.0, 0.0, 4.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q5FPro转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">4.0%</td>
             <td><span class="good">NEW</span></td>
-        </tr><tr>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
+            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">【重磅新品】德施曼智能门锁指纹锁密码锁入户门电子锁防盗门U3F</td>
+            <td>德施曼 U3F</td>
+            <td class="clickable-cell" data-trend="[32.0, 37.0, 22.0, 29.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">29</td>
+            <td class="clickable-cell" data-trend="[0.0, 0.0, 0.0, 1.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1</td>
+            <td class="val-y clickable-cell" data-trend="[0.0, 0.0, 0.0, 1626.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥1,626.0</td>
+            <td class="clickable-cell" data-trend="[0.0, 0.0, 0.0, 3.45]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 U3F转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">3.5%</td>
+            <td><span class="good">NEW</span></td>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
+            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼密码锁人脸识别指纹锁家用猫眼双摄防盗智能门锁Q2F双摄</td>
+            <td>德施曼 Q2F</td>
+            <td class="clickable-cell" data-trend="[125.0, 173.0, 153.0, 147.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2F访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">147</td>
+            <td class="clickable-cell" data-trend="[1.0, 3.0, 1.0, 1.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2F支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1</td>
+            <td class="val-y clickable-cell" data-trend="[1292.0, 3772.0, 1368.0, 1368.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2F支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥1,368.0</td>
+            <td class="clickable-cell" data-trend="[0.8, 1.73, 0.65, 0.68]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="德施曼 Q2F转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">0.7%</td>
+            <td><span class="down">↓1</span></td>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
             <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼密码指纹锁家用防盗门全自动智能锁电子锁小嘀Q2P</td>
             <td>小嘀 Q2P</td>
-            <td>126</td>
-            <td>1</td>
-            <td class="val-y">¥788.0</td>
-            <td>0.79%</td>
-            <td><span class="good">NEW</span></td>
-        </tr></tbody>
+            <td class="clickable-cell" data-trend="[106.0, 126.0, 139.0, 104.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 Q2P访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">104</td>
+            <td class="clickable-cell" data-trend="[0.0, 1.0, 1.0, 1.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 Q2P支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1</td>
+            <td class="val-y clickable-cell" data-trend="[0.0, 787.99, 722.35, 727.99]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 Q2P支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥728.0</td>
+            <td class="clickable-cell" data-trend="[0.0, 0.79, 0.72, 0.96]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 Q2P转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">1.0%</td>
+            <td><span class="down">↓1</span></td>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr><tr>
+            <td class="row-label" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">德施曼指纹锁家用防盗门密码锁机械密码电子智能锁小嘀V20</td>
+            <td>小嘀 V20</td>
+            <td class="clickable-cell" data-trend="[328.0, 286.0, 411.0, 342.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20访客数" data-trend-fmt="int" onclick="toggleProductTrend(this)">342</td>
+            <td class="clickable-cell" data-trend="[2.0, 7.0, 4.0, 1.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20支付件数" data-trend-fmt="int" onclick="toggleProductTrend(this)">1</td>
+            <td class="val-y clickable-cell" data-trend="[1058.0, 4117.0, 2330.0, 608.0]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20支付金额" data-trend-fmt="amount" onclick="toggleProductTrend(this)">¥608.0</td>
+            <td class="clickable-cell" data-trend="[0.61, 2.45, 0.97, 0.29]" data-trend-dates="[&quot;8/23&quot;, &quot;8/24&quot;, &quot;8/25&quot;, &quot;8/26&quot;]" data-trend-label="小嘀 V20转化率" data-trend-fmt="pct" onclick="toggleProductTrend(this)">0.3%</td>
+            <td><span class="down">↓5</span></td>
+            <td class="pending">未上榜</td>
+        </tr>
+        <tr class="trend-row" style="display:none"><td colspan="8"></td></tr></tbody>
     </table></div>
 <div class="insight-block" data-uid="insight_6">
-<div class="insight" id="insight_6_original"><strong>TOP10商品排名：</strong>TOP1 小嘀 V20F（¥31,075），共10款商品上榜。<span class="good">6款新上榜</span>，<span class="up">2款排名上升</span>。</div>
+<div class="insight" id="insight_6_original"><strong>TOP10商品排名：</strong>TOP1 小嘀 V20F（¥21,094.0），共10款商品上榜。<span class="good">3款新上榜</span>，<span class="up">1款排名上升</span>。</div>
 <div class="insight-conclusions" id="insight_6_conclusions"></div>
 <div class="insight-edit-area" id="insight_6_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_6_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -353,7 +394,6 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 </div>
-<div class="section-source">数据来源：商品排行.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <div class="section">
@@ -364,33 +404,33 @@ UV <span class="tag up">+27.33%</span>，
         <tbody>
             <tr class="">
             <td class="row-label">全站推广</td>
-            <td class="val-y">¥249.6</td>
-            <td>¥195.0</td>
-            <td class="up">+27.95%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">关键词推广</td>
-            <td class="val-y">¥1,678.1</td>
-            <td>¥1,083.8</td>
-            <td class="up">+54.83%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">精准人群推广</td>
-            <td class="val-y">¥1,225.1</td>
-            <td>¥782.0</td>
-            <td class="up">+56.66%</td>
+            <td class="val-y">¥179.5</td>
+            <td>¥177.6</td>
+            <td class="up">+1.04%</td>
         </tr>
             <tr class="">
+            <td class="row-label">关键词推广</td>
+            <td class="val-y">¥1,117.6</td>
+            <td>¥1,383.2</td>
+            <td class="down">-19.2%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">精准人群推广</td>
+            <td class="val-y">¥629.6</td>
+            <td>¥1,186.8</td>
+            <td class="down">-46.95%</td>
+        </tr>
+            <tr class="big-change">
             <td class="row-label">淘宝客佣金</td>
-            <td class="val-y">¥338.8</td>
-            <td>¥453.3</td>
-            <td class="down">-25.25%</td>
+            <td class="val-y">¥89.3</td>
+            <td>¥278.8</td>
+            <td class="down">-67.95%</td>
         </tr>
             <tr class="">
             <td class="row-label">推广总花费</td>
-            <td class="val-y">¥3,491.5</td>
-            <td>¥2,514.2</td>
-            <td class="up">+38.87%</td>
+            <td class="val-y">¥2,016.0</td>
+            <td>¥3,026.4</td>
+            <td class="down">-33.38%</td>
         </tr>
         </tbody>
     </table><table class="data-table compact">
@@ -398,39 +438,39 @@ UV <span class="tag up">+27.33%</span>，
         <tbody>
             <tr class="">
             <td class="row-label">退款金额</td>
-            <td class="val-y">¥28,408.8</td>
-            <td>¥20,143.9</td>
-            <td class="up">+41.03%</td>
-        </tr>
-            <tr class="">
-            <td class="row-label">金额退款率</td>
-            <td class="val-y">18.94%</td>
-            <td>24.33%</td>
-            <td class="down">-22.15%</td>
+            <td class="val-y">¥29,344.3</td>
+            <td>¥20,949.3</td>
+            <td class="up">+40.07%</td>
         </tr>
             <tr class="big-change">
-            <td class="row-label">成功退款率</td>
-            <td class="val-y">24.62%</td>
-            <td>78.38%</td>
-            <td class="down">-68.59%</td>
+            <td class="row-label">金额退款率</td>
+            <td class="val-y">29.8%</td>
+            <td>12.2%</td>
+            <td class="up">+145.07%</td>
         </tr>
             <tr class="">
+            <td class="row-label">成功退款率</td>
+            <td class="val-y">40.0%</td>
+            <td>34.1%</td>
+            <td class="up">+17.23%</td>
+        </tr>
+            <tr class="big-change">
             <td class="row-label">订单退款率</td>
-            <td class="val-y">13.85%</td>
-            <td>21.62%</td>
-            <td class="down">-35.94%</td>
+            <td class="val-y">26.2%</td>
+            <td>12.9%</td>
+            <td class="up">+102.86%</td>
         </tr>
             <tr class="">
             <td class="row-label">退款处理时长(天)</td>
-            <td class="val-y">0.2</td>
-            <td>0.2</td>
-            <td class="neutral">0.0%</td>
+            <td class="val-y">0</td>
+            <td>0</td>
+            <td class="up">+4.76%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">净支付金额</td>
-            <td class="val-y">¥54,536.9</td>
-            <td>¥20,495.6</td>
-            <td class="up">+166.09%</td>
+            <td class="val-y">¥27,350.0</td>
+            <td>¥45,432.9</td>
+            <td class="down">-39.8%</td>
         </tr>
         </tbody>
     </table></div>
@@ -439,149 +479,149 @@ UV <span class="tag up">+27.33%</span>，
         <tbody>
             <tr class="">
             <td class="row-label">询单转化率</td>
-            <td class="val-y">28.65%</td>
-            <td>28.95%</td>
-            <td class="down">-1.04%</td>
+            <td class="val-y">29.1%</td>
+            <td>28.8%</td>
+            <td class="up">+1.11%</td>
         </tr>
             <tr class="">
             <td class="row-label">旺旺满意度</td>
-            <td class="val-y">77.08%</td>
-            <td>77.01%</td>
-            <td class="up">+0.09%</td>
+            <td class="val-y">77.3%</td>
+            <td>77.6%</td>
+            <td class="down">-0.35%</td>
         </tr>
             <tr class="">
             <td class="row-label">旺旺响应时长(秒)</td>
-            <td class="val-y">22.1</td>
-            <td>22.2</td>
-            <td class="down">-0.54%</td>
+            <td class="val-y">22</td>
+            <td>22</td>
+            <td class="up">+0.09%</td>
         </tr>
             <tr class="">
             <td class="row-label">24h揽收及时率</td>
-            <td class="val-y">90.85%</td>
-            <td>90.78%</td>
-            <td class="up">+0.08%</td>
+            <td class="val-y">91.1%</td>
+            <td>90.9%</td>
+            <td class="up">+0.25%</td>
         </tr>
             <tr class="">
             <td class="row-label">物流到货时长(h)</td>
-            <td class="val-y">51.6</td>
-            <td>51.7</td>
-            <td class="down">-0.15%</td>
+            <td class="val-y">51</td>
+            <td>52</td>
+            <td class="down">-0.6%</td>
         </tr>
             <tr class="">
             <td class="row-label">平台判责率</td>
-            <td class="val-y">0.00%</td>
-            <td>0.00%</td>
+            <td class="val-y">0.0%</td>
+            <td>0.0%</td>
             <td class="neutral">—</td>
         </tr>
             <tr class="">
             <td class="row-label">咨询人数</td>
-            <td class="val-y">16,409</td>
-            <td>16,374</td>
-            <td class="up">+0.21%</td>
+            <td class="val-y">16,178</td>
+            <td>16,346</td>
+            <td class="down">-1.03%</td>
         </tr>
             <tr class="">
             <td class="row-label">咨询率</td>
-            <td class="val-y">6.31%</td>
-            <td>5.05%</td>
-            <td class="up">+24.95%</td>
+            <td class="val-y">6.8%</td>
+            <td>6.5%</td>
+            <td class="up">+4.43%</td>
         </tr>
         </tbody>
     </table><table class="data-table compact">
-        <thead><tr class="group-header"><th>用户&amp;老客</th><th>昨日</th><th>前日</th><th>环比</th></tr></thead>
+        <thead><tr class="group-header"><th>用户&老客</th><th>昨日</th><th>前日</th><th>环比</th></tr></thead>
         <tbody>
             <tr class="">
             <td class="row-label">店铺客户数</td>
-            <td class="val-y">6,274</td>
-            <td>5,281</td>
-            <td class="up">+18.8%</td>
+            <td class="val-y">4,988</td>
+            <td>5,909</td>
+            <td class="down">-15.59%</td>
         </tr>
             <tr class="">
             <td class="row-label">有过已购客户数</td>
-            <td class="val-y">56,930</td>
-            <td>57,005</td>
-            <td class="down">-0.13%</td>
+            <td class="val-y">56,823</td>
+            <td>56,949</td>
+            <td class="down">-0.22%</td>
         </tr>
             <tr class="big-change">
             <td class="row-label">支付老买家数</td>
-            <td class="val-y">7</td>
+            <td class="val-y">9</td>
             <td>4</td>
-            <td class="up">+75.0%</td>
+            <td class="up">+125.0%</td>
         </tr>
             <tr class="big-change">
             <td class="row-label">老买家支付金额</td>
-            <td class="val-y">¥6,439</td>
-            <td>¥3,422</td>
-            <td class="up">+88.16%</td>
+            <td class="val-y">¥7,239.0</td>
+            <td>¥3,719.0</td>
+            <td class="up">+94.65%</td>
         </tr>
             <tr class="big-change">
             <td class="row-label">老客复购人数</td>
-            <td class="val-y">7</td>
+            <td class="val-y">9</td>
             <td>4</td>
-            <td class="up">+75.0%</td>
+            <td class="up">+125.0%</td>
         </tr>
             <tr class="big-change">
             <td class="row-label">老客复购金额</td>
-            <td class="val-y">¥6,439</td>
-            <td>¥3,422</td>
-            <td class="up">+88.16%</td>
-        </tr>
-            <tr class="">
-            <td class="row-label">老客复购率</td>
-            <td class="val-y">0.01%</td>
-            <td>0.01%</td>
-            <td class="neutral">0.0%</td>
+            <td class="val-y">¥7,239.0</td>
+            <td>¥3,719.0</td>
+            <td class="up">+94.65%</td>
         </tr>
             <tr class="big-change">
+            <td class="row-label">老客复购率</td>
+            <td class="val-y">0.0%</td>
+            <td>0.0%</td>
+            <td class="up">+100.0%</td>
+        </tr>
+            <tr class="">
             <td class="row-label">回访成交</td>
-            <td class="val-y">55</td>
-            <td>7</td>
-            <td class="up">+685.71%</td>
+            <td class="val-y">29</td>
+            <td>26</td>
+            <td class="up">+11.54%</td>
         </tr>
         </tbody>
     </table></div>
 <div style="margin-top:14px"><table class="data-table compact">
-        <thead><tr class="group-header"><th>内容&amp;运营</th><th>昨日</th><th>前日</th><th>环比</th></tr></thead>
+        <thead><tr class="group-header"><th>内容&运营</th><th>昨日</th><th>前日</th><th>环比</th></tr></thead>
         <tbody>
             <tr class="">
             <td class="row-label">内容查看人数</td>
-            <td class="val-y">325</td>
-            <td>308</td>
-            <td class="up">+5.52%</td>
+            <td class="val-y">225</td>
+            <td>356</td>
+            <td class="down">-36.8%</td>
         </tr>
             <tr class="">
             <td class="row-label">总内容供给规模量</td>
-            <td class="val-y">5,924</td>
-            <td>5,868</td>
-            <td class="up">+0.95%</td>
+            <td class="val-y">5,931</td>
+            <td>5,930</td>
+            <td class="up">+0.02%</td>
         </tr>
             <tr class="">
             <td class="row-label">进入公域视频数</td>
-            <td class="val-y">61</td>
-            <td>62</td>
-            <td class="down">-1.61%</td>
+            <td class="val-y">62</td>
+            <td>61</td>
+            <td class="up">+1.64%</td>
         </tr>
             <tr class="">
             <td class="row-label">商品覆盖率</td>
-            <td class="val-y">75.41%</td>
-            <td>75.81%</td>
-            <td class="down">-0.53%</td>
+            <td class="val-y">74.2%</td>
+            <td>75.4%</td>
+            <td class="down">-1.62%</td>
         </tr>
             <tr class="">
             <td class="row-label">关联商品数</td>
             <td class="val-y">46</td>
-            <td>47</td>
-            <td class="down">-2.13%</td>
+            <td>46</td>
+            <td class="neutral">0.0%</td>
         </tr>
             <tr class="">
             <td class="row-label">开播时长(h)</td>
-            <td class="val-y">24</td>
-            <td>22.7</td>
-            <td class="up">+5.76%</td>
+            <td class="val-y">23</td>
+            <td>24</td>
+            <td class="down">-2.39%</td>
         </tr>
         </tbody>
     </table></div>
 <div class="insight-block" data-uid="insight_7">
-<div class="insight" id="insight_7_original"><strong>推广花费：</strong>总花费 ¥3,491.5，环比 <span class="tag up">+38.87%</span>。全站推广 <span class="tag up">+27.95%</span>、关键词推广 <span class="tag up">+54.83%</span>。</div>
+<div class="insight" id="insight_7_original"><strong>推广花费：</strong>总花费 ¥2,016.0，环比 <span class="tag down">-33.38%</span>。全站推广 <span class="tag up">+1.04%</span>、关键词推广 <span class="tag down">-19.2%</span>。</div>
 <div class="insight-conclusions" id="insight_7_conclusions"></div>
 <div class="insight-edit-area" id="insight_7_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_7_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -595,7 +635,7 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 <div class="insight-block" data-uid="insight_8">
-<div class="insight" id="insight_8_original"><strong>退款情况：</strong>退款金额 ¥28,408.8（环比 <span class="tag up">+41.03%</span>），金额退款率 18.94%，净支付金额 ¥54,536.9（环比 <span class="tag up">+166.09%</span>）。<span class="warn">退款金额占净支付 52.1%，需关注。</span></div>
+<div class="insight" id="insight_8_original"><strong>退款情况：</strong>退款金额 ¥29,344.3（环比 <span class="tag up">+40.07%</span>），金额退款率 29.8%，净支付金额 ¥27,350.0（环比 <span class="tag down">-39.8%</span>）。<span class="warn">退款金额占净支付 107.3%，需关注。</span></div>
 <div class="insight-conclusions" id="insight_8_conclusions"></div>
 <div class="insight-edit-area" id="insight_8_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_8_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -609,7 +649,7 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 <div class="insight-block" data-uid="insight_9">
-<div class="insight" id="insight_9_original"><strong>服务指标：</strong>询单转化率 <span class="tag down">-1.04%</span>、旺旺满意度 <span class="tag up">+0.09%</span>。旺旺响应 22.1秒，24h揽收及时率 90.8%。平台判责率 0%，服务表现良好。</div>
+<div class="insight" id="insight_9_original"><strong>服务指标：</strong>询单转化率 <span class="tag up">+1.11%</span>、旺旺满意度 <span class="tag down">-0.35%</span>。旺旺响应 22秒，24h揽收及时率 91.1%。平台判责率 0%，服务表现良好。</div>
 <div class="insight-conclusions" id="insight_9_conclusions"></div>
 <div class="insight-edit-area" id="insight_9_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_9_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -623,7 +663,7 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 <div class="insight-block" data-uid="insight_10">
-<div class="insight" id="insight_10_original"><strong>用户&amp;老客：</strong>店铺客户数 <span class="tag up">+18.8%</span>、支付老买家数 <span class="tag up">+75.0%</span>。老客复购 7人，复购金额 ¥6,439，复购率 0.01%。累计已购客户 56,930。</div>
+<div class="insight" id="insight_10_original"><strong>用户&老客：</strong>店铺客户数 <span class="tag down">-15.59%</span>、支付老买家数 <span class="tag up">+125.0%</span>。老客复购 9人，复购金额 ¥7,239.0，复购率 0.0%。累计已购客户 56,823。</div>
 <div class="insight-conclusions" id="insight_10_conclusions"></div>
 <div class="insight-edit-area" id="insight_10_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_10_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -637,7 +677,7 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 <div class="insight-block" data-uid="insight_11">
-<div class="insight" id="insight_11_original"><strong>内容&amp;运营：</strong>内容查看人数 <span class="tag up">+5.52%</span>。商品覆盖率 75.4%，内容供给量 5,924，公域视频 61个，开播 24h。</div>
+<div class="insight" id="insight_11_original"><strong>内容&运营：</strong>内容查看人数 <span class="tag down">-36.8%</span>。商品覆盖率 74.2%，内容供给量 5,931，公域视频 62个，开播 23h。</div>
 <div class="insight-conclusions" id="insight_11_conclusions"></div>
 <div class="insight-edit-area" id="insight_11_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_11_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -651,102 +691,101 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 </div>
-<div class="section-source">数据来源：全店数据.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <!-- ===== 核心单品维度 ===== -->
 <div class="report-group">
 <span class="grp-name">核心单品维度</span>
-<span class="grp-desc">Q2FD &amp; V20F 单品环比 · 趋势 · 流量 · 流失</span>
+<span class="grp-desc">Q2FD & V20F 单品环比 · 趋势 · 流量 · 流失</span>
 </div>
 
 <div class="section">
-<div class="section-title"><span class="title-group">核心型号：Q2FD &amp; V20F<span class="badge">单品环比</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
+<div class="section-title"><span class="title-group">核心型号：Q2FD & V20F<span class="badge">单品环比</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
 <div class="chart-row">
-<div class="chart-box"><div class="chart-box-title">Q2FD vs V20F 昨日核心指标对比</div><div class="chart-canvas"><canvas id="chart-product-cmp" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
-<div class="chart-box"><div class="chart-box-title">Q2FD vs V20F 支付金额 &amp; 支付件数（昨日vs前日）</div><div class="chart-canvas"><canvas id="chart-product-pay" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">Q2FD vs V20F 昨日核心指标对比</div><div class="chart-canvas"><canvas id="chart-product-cmp"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">Q2FD vs V20F 支付金额 & 支付件数（昨日vs前日）</div><div class="chart-canvas"><canvas id="chart-product-pay"></canvas></div></div>
 </div>
 <div class="dual-table"><table class="data-table">
         <thead><tr class="group-header"><th>Q2FD 指标</th><th>昨日</th><th>前日</th><th>环比</th></tr></thead>
         <tbody>
             <tr class="">
             <td class="row-label">UV(访客数)</td>
-            <td class="val-y">2,831</td>
-            <td>2,355</td>
-            <td class="up">+20.21%</td>
+            <td class="val-y">1,975</td>
+            <td>2,294</td>
+            <td class="down">-13.91%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付金额</td>
-            <td class="val-y">¥29,617</td>
-            <td>¥5,664</td>
-            <td class="up">+422.9%</td>
+            <td class="val-y">¥12,962.0</td>
+            <td>¥14,025.7</td>
+            <td class="down">-7.58%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付件数</td>
-            <td class="val-y">41</td>
-            <td>8</td>
-            <td class="up">+412.5%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">支付买家数</td>
-            <td class="val-y">40</td>
-            <td>8</td>
-            <td class="up">+400.0%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">支付转化率</td>
-            <td class="val-y">1.41%</td>
-            <td>0.34%</td>
-            <td class="up">+314.71%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">推广消耗</td>
-            <td class="val-y">¥1,422.3</td>
-            <td>¥647.1</td>
-            <td class="up">+119.8%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">推广ROI</td>
-            <td class="val-y">8.2</td>
-            <td>5.5</td>
-            <td class="up">+50.14%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">加购人数</td>
-            <td class="val-y">147</td>
-            <td>87</td>
-            <td class="up">+68.97%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">加购件数</td>
-            <td class="val-y">171</td>
-            <td>95</td>
-            <td class="up">+80.0%</td>
-        </tr>
-            <tr class="big-change">
-            <td class="row-label">商品收藏人数</td>
             <td class="val-y">17</td>
-            <td>10</td>
-            <td class="up">+70.0%</td>
+            <td>18</td>
+            <td class="down">-5.56%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">支付买家数</td>
+            <td class="val-y">17</td>
+            <td>17</td>
+            <td class="neutral">0.0%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">支付转化率</td>
+            <td class="val-y">0.9%</td>
+            <td>0.7%</td>
+            <td class="up">+16.22%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">推广消耗</td>
+            <td class="val-y">¥692.5</td>
+            <td>¥1,178.8</td>
+            <td class="down">-41.26%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">推广ROI</td>
+            <td class="val-y">6</td>
+            <td>7</td>
+            <td class="down">-16.48%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">加购人数</td>
+            <td class="val-y">86</td>
+            <td>131</td>
+            <td class="down">-34.35%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">加购件数</td>
+            <td class="val-y">92</td>
+            <td>147</td>
+            <td class="down">-37.41%</td>
+        </tr>
+            <tr class="">
+            <td class="row-label">商品收藏人数</td>
+            <td class="val-y">13</td>
+            <td>14</td>
+            <td class="down">-7.14%</td>
         </tr>
             <tr class="">
             <td class="row-label">浏览量</td>
-            <td class="val-y">6,517</td>
-            <td>4,488</td>
-            <td class="up">+45.21%</td>
+            <td class="val-y">4,225</td>
+            <td>5,144</td>
+            <td class="down">-17.87%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">下单金额</td>
-            <td class="val-y">¥39,746</td>
-            <td>¥8,674</td>
-            <td class="up">+358.22%</td>
+            <td class="val-y">¥16,038.0</td>
+            <td>¥19,426.7</td>
+            <td class="down">-17.44%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">下单件数</td>
-            <td class="val-y">55</td>
-            <td>12</td>
-            <td class="up">+358.33%</td>
+            <td class="val-y">21</td>
+            <td>25</td>
+            <td class="down">-16.0%</td>
         </tr>
         </tbody>
     </table><table class="data-table">
@@ -754,88 +793,87 @@ UV <span class="tag up">+27.33%</span>，
         <tbody>
             <tr class="">
             <td class="row-label">UV(访客数)</td>
-            <td class="val-y">1,906</td>
-            <td>1,870</td>
-            <td class="up">+1.93%</td>
+            <td class="val-y">1,734</td>
+            <td>2,400</td>
+            <td class="down">-27.75%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付金额</td>
-            <td class="val-y">¥31,075</td>
-            <td>¥14,073</td>
-            <td class="up">+120.81%</td>
+            <td class="val-y">¥21,094.0</td>
+            <td>¥24,586.0</td>
+            <td class="down">-14.2%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付件数</td>
-            <td class="val-y">35</td>
-            <td>17</td>
-            <td class="up">+105.88%</td>
+            <td class="val-y">24</td>
+            <td>28</td>
+            <td class="down">-14.29%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付买家数</td>
-            <td class="val-y">32</td>
-            <td>17</td>
-            <td class="up">+88.24%</td>
+            <td class="val-y">20</td>
+            <td>24</td>
+            <td class="down">-16.67%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">支付转化率</td>
-            <td class="val-y">1.68%</td>
-            <td>0.91%</td>
-            <td class="up">+84.62%</td>
+            <td class="val-y">1.1%</td>
+            <td>1.0%</td>
+            <td class="up">+15.0%</td>
         </tr>
             <tr class="">
             <td class="row-label">推广消耗</td>
-            <td class="val-y">¥1,350.8</td>
-            <td>¥1,091.3</td>
-            <td class="up">+23.78%</td>
+            <td class="val-y">¥945.1</td>
+            <td>¥1,261.2</td>
+            <td class="down">-25.06%</td>
         </tr>
             <tr class="">
             <td class="row-label">推广ROI</td>
-            <td class="val-y">15.7</td>
-            <td>12.0</td>
-            <td class="up">+31.35%</td>
+            <td class="val-y">10</td>
+            <td>12</td>
+            <td class="down">-13.63%</td>
         </tr>
             <tr class="">
             <td class="row-label">加购人数</td>
-            <td class="val-y">145</td>
-            <td>99</td>
-            <td class="up">+46.46%</td>
+            <td class="val-y">100</td>
+            <td>117</td>
+            <td class="down">-14.53%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">加购件数</td>
-            <td class="val-y">164</td>
-            <td>108</td>
-            <td class="up">+51.85%</td>
+            <td class="val-y">108</td>
+            <td>130</td>
+            <td class="down">-16.92%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">商品收藏人数</td>
-            <td class="val-y">17</td>
-            <td>9</td>
-            <td class="up">+88.89%</td>
+            <td class="val-y">18</td>
+            <td>16</td>
+            <td class="up">+12.5%</td>
         </tr>
             <tr class="">
             <td class="row-label">浏览量</td>
-            <td class="val-y">4,916</td>
-            <td>4,618</td>
-            <td class="up">+6.45%</td>
+            <td class="val-y">3,965</td>
+            <td>5,441</td>
+            <td class="down">-27.13%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">下单金额</td>
-            <td class="val-y">¥34,567</td>
-            <td>¥17,743</td>
-            <td class="up">+94.82%</td>
+            <td class="val-y">¥25,487.0</td>
+            <td>¥28,119.0</td>
+            <td class="down">-9.36%</td>
         </tr>
-            <tr class="big-change">
+            <tr class="">
             <td class="row-label">下单件数</td>
-            <td class="val-y">39</td>
-            <td>21</td>
-            <td class="up">+85.71%</td>
+            <td class="val-y">29</td>
+            <td>32</td>
+            <td class="down">-9.38%</td>
         </tr>
         </tbody>
     </table></div>
 <div class="insight-block" data-uid="insight_12">
-<div class="insight" id="insight_12_original"><strong>核心型号洞察：</strong>Q2FD 支付金额 <span class="tag up">+422.9%</span>，UV <span class="tag up">+20.21%</span>，ROI 8.2；V20F 支付金额 <span class="tag up">+120.81%</span>，UV <span class="tag up">+1.93%</span>，ROI 15.7。</div>
-<div class="insight-conclusions" id="insight_12_conclusions"><div class="conclusion-item"><div class="conclusion-text">1️⃣前一日销量较少，Q2FD昨日销售表现增长较明显；两款型号晚20后转化率提升明显；
-2️⃣整体销量距目标仍有缺口，直播间沟通以及推广端重点跟进</div><button class="btn-delete" onclick="deleteConclusion('insight_12',0)" title="删除">✕</button></div></div>
+<div class="insight" id="insight_12_original"><strong>核心型号洞察：</strong>Q2FD 支付金额 <span class="tag down">-7.58%</span>，UV <span class="tag down">-13.91%</span>，ROI 6；V20F 支付金额 <span class="tag down">-14.2%</span>，UV <span class="tag down">-27.75%</span>，ROI 10。</div>
+<div class="insight-conclusions" id="insight_12_conclusions"></div>
 <div class="insight-edit-area" id="insight_12_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_12_textarea" placeholder="输入你的分析结论..."></textarea>
 <div class="insight-edit-actions">
@@ -848,24 +886,22 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 </div>
-<div class="section-source">数据来源：Q2FD销售数据.xlsx / V20F销售数据.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <div class="section">
 <div class="section-title"><span class="title-group">近30天趋势<span class="badge">UV · 支付金额 · 支付件数 · 推广消耗</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
 <div class="chart-row">
-<div class="chart-box"><div class="chart-box-title">UV趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-uv" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
-<div class="chart-box"><div class="chart-box-title">支付金额趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-pay" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">UV趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-uv"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">支付金额趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-pay"></canvas></div></div>
 </div>
 <div class="chart-row">
-<div class="chart-box"><div class="chart-box-title">支付件数趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-items" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
-<div class="chart-box"><div class="chart-box-title">推广消耗趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-ad-trend" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">支付件数趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-items"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">推广消耗趋势（Q2FD vs V20F）</div><div class="chart-canvas"><canvas id="chart-ad-trend"></canvas></div></div>
 </div>
 <div class="insight-block" data-uid="insight_13">
-<div class="insight" id="insight_13_original"><strong>趋势洞察：</strong>近30天 Q2FD 日均UV 4,660.4、日均支付 ¥28,181.9，峰值UV 8,122、峰值支付 ¥57,901.3；V20F 日均UV 3,873.8、日均支付 ¥22,472.4，峰值UV 6,273、峰值支付 ¥55,628.6。Q2FD流量整体高于V20F。</div>
-<div class="insight-conclusions" id="insight_13_conclusions"><div class="conclusion-item"><div class="conclusion-text">1️⃣8.10-后访客/销量/等指标逐渐下滑趋势，昨日有明显拉升；
-2️⃣后续核心做好这波活动的销售稳定；</div><button class="btn-delete" onclick="deleteConclusion('insight_13',0)" title="删除">✕</button></div></div>
+<div class="insight" id="insight_13_original"><strong>趋势洞察：</strong>近30天 Q2FD 日均UV 4,336、日均支付 ¥26,240.4，峰值UV 7,167、峰值支付 ¥57,901.3；V20F 日均UV 3,772、日均支付 ¥21,270.7，峰值UV 6,273、峰值支付 ¥55,628.6。Q2FD流量整体高于V20F。</div>
+<div class="insight-conclusions" id="insight_13_conclusions"></div>
 <div class="insight-edit-area" id="insight_13_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_13_textarea" placeholder="输入你的分析结论..."></textarea>
 <div class="insight-edit-actions">
@@ -878,15 +914,14 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 </div>
-<div class="section-source">数据来源：Q2FD/V20F销售数据.xlsx（近30天趋势）</div>
 </div>
 
 <div class="section">
 <div class="section-title"><span class="title-group">细分流量情况<span class="badge">6大核心渠道环比</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
 <div class="chart-row">
-<div class="chart-box"><div class="chart-box-title">Q2FD 各渠道UV（昨日 vs 前日）</div><div class="chart-canvas"><canvas id="chart-q2fd-ch-uv" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
-<div class="chart-box"><div class="chart-box-title">V20F 各渠道UV（昨日 vs 前日）</div><div class="chart-canvas"><canvas id="chart-v20f-ch-uv" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">Q2FD 各渠道UV（昨日 vs 前日）</div><div class="chart-canvas"><canvas id="chart-q2fd-ch-uv"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">V20F 各渠道UV（昨日 vs 前日）</div><div class="chart-canvas"><canvas id="chart-v20f-ch-uv"></canvas></div></div>
 </div>
 <div class="subsection"><h3>Q2FD 细分流量</h3><table class="data-table">
             <thead><tr class="group-header">
@@ -896,44 +931,44 @@ UV <span class="tag up">+27.33%</span>，
             </tr></thead>
             <tbody><tr class="">
                 <td class="row-label">人群推广</td>
-                <td class="val-y">1,642</td><td>1,585</td><td class="up">+3.6%</td>
-                <td class="val-y">7</td><td>5</td><td class="up">+40.0%</td>
-                <td class="val-y">7</td><td>5</td><td class="up">+40.0%</td>
-                <td class="val-y">0.43%</td><td>0.32%</td><td class="up">+34.37%</td>
-            </tr><tr class="big-change">
+                <td class="val-y">1,056</td><td>1,306</td><td class="down">-19.14%</td>
+                <td class="val-y">2</td><td>2</td><td class="neutral">0.0%</td>
+                <td class="val-y">2</td><td>3</td><td class="down">-33.33%</td>
+                <td class="val-y">0.19%</td><td>0.15%</td><td class="up">+26.67%</td>
+            </tr><tr class="">
                 <td class="row-label">关键词推广</td>
-                <td class="val-y">635</td><td>288</td><td class="up">+120.49%</td>
-                <td class="val-y">11</td><td>1</td><td class="up">+1000.0%</td>
-                <td class="val-y">11</td><td>1</td><td class="up">+1000.0%</td>
-                <td class="val-y">1.73%</td><td>0.35%</td><td class="up">+394.29%</td>
-            </tr><tr class="big-change">
+                <td class="val-y">272</td><td>400</td><td class="down">-32.0%</td>
+                <td class="val-y">5</td><td>9</td><td class="down">-44.44%</td>
+                <td class="val-y">5</td><td>9</td><td class="down">-44.44%</td>
+                <td class="val-y">1.84%</td><td>2.25%</td><td class="down">-18.22%</td>
+            </tr><tr class="">
                 <td class="row-label">搜索</td>
-                <td class="val-y">154</td><td>82</td><td class="up">+87.8%</td>
-                <td class="val-y">11</td><td>1</td><td class="up">+1000.0%</td>
-                <td class="val-y">11</td><td>1</td><td class="up">+1000.0%</td>
-                <td class="val-y">7.14%</td><td>1.22%</td><td class="up">+485.25%</td>
+                <td class="val-y">163</td><td>116</td><td class="up">+40.52%</td>
+                <td class="val-y">2</td><td>6</td><td class="down">-66.67%</td>
+                <td class="val-y">2</td><td>7</td><td class="down">-71.43%</td>
+                <td class="val-y">1.23%</td><td>5.17%</td><td class="down">-76.21%</td>
             </tr><tr class="">
                 <td class="row-label">推荐</td>
-                <td class="val-y">145</td><td>126</td><td class="up">+15.08%</td>
-                <td class="val-y">1</td><td>2</td><td class="down">-50.0%</td>
-                <td class="val-y">1</td><td>2</td><td class="down">-50.0%</td>
-                <td class="val-y">0.69%</td><td>1.59%</td><td class="down">-56.6%</td>
+                <td class="val-y">125</td><td>116</td><td class="up">+7.76%</td>
+                <td class="val-y">1</td><td>0</td><td class="neutral">—</td>
+                <td class="val-y">1</td><td>0</td><td class="neutral">—</td>
+                <td class="val-y">0.80%</td><td>%</td><td class="neutral">—</td>
             </tr><tr class="">
                 <td class="row-label">百亿补贴</td>
-                <td class="val-y">85</td><td>71</td><td class="up">+19.72%</td>
-                <td class="val-y">7</td><td>1</td><td class="up">+600.0%</td>
-                <td class="val-y">8</td><td>1</td><td class="up">+700.0%</td>
-                <td class="val-y">8.24%</td><td>1.41%</td><td class="up">+484.4%</td>
+                <td class="val-y">70</td><td>77</td><td class="down">-9.09%</td>
+                <td class="val-y">4</td><td>3</td><td class="up">+33.33%</td>
+                <td class="val-y">4</td><td>4</td><td class="neutral">0.0%</td>
+                <td class="val-y">5.71%</td><td>3.90%</td><td class="up">+46.41%</td>
             </tr><tr class="">
                 <td class="row-label">淘宝直播</td>
-                <td class="val-y">91</td><td>84</td><td class="up">+8.33%</td>
-                <td class="val-y">9</td><td>1</td><td class="up">+800.0%</td>
-                <td class="val-y">9</td><td>1</td><td class="up">+800.0%</td>
-                <td class="val-y">9.89%</td><td>1.19%</td><td class="up">+731.09%</td>
+                <td class="val-y">115</td><td>87</td><td class="up">+32.18%</td>
+                <td class="val-y">4</td><td>6</td><td class="down">-33.33%</td>
+                <td class="val-y">4</td><td>7</td><td class="down">-42.86%</td>
+                <td class="val-y">3.48%</td><td>6.90%</td><td class="down">-49.57%</td>
             </tr></tbody>
         </table><div class="insight-block" data-uid="insight_1">
-<div class="insight" id="insight_1_original"><strong>Q2FD 流量洞察：</strong>最大流量渠道为<strong>人群推广</strong>（UV 1,642），关键词推广增长 <span class="tag up">+120.49%</span>。</div>
-<div class="insight-conclusions" id="insight_1_conclusions"><div class="conclusion-item"><div class="conclusion-text">1️⃣昨晚Q2FD销售渠道来源为搜索/关键词侧，受跟价影响，搜索端转化较高；</div><button class="btn-delete" onclick="deleteConclusion('insight_1',0)" title="删除">✕</button></div></div>
+<div class="insight" id="insight_1_original"><strong>Q2FD 流量洞察：</strong>最大流量渠道为<strong>人群推广</strong>（UV 1,056），搜索增长 <span class="tag up">+40.52%</span>。</div>
+<div class="insight-conclusions" id="insight_1_conclusions"></div>
 <div class="insight-edit-area" id="insight_1_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_1_textarea" placeholder="输入你的分析结论..."></textarea>
 <div class="insight-edit-actions">
@@ -953,43 +988,43 @@ UV <span class="tag up">+27.33%</span>，
             </tr></thead>
             <tbody><tr class="">
                 <td class="row-label">人群推广</td>
-                <td class="val-y">1,153</td><td>1,173</td><td class="down">-1.71%</td>
-                <td class="val-y">11</td><td>10</td><td class="up">+10.0%</td>
-                <td class="val-y">13</td><td>10</td><td class="up">+30.0%</td>
-                <td class="val-y">0.95%</td><td>0.85%</td><td class="up">+11.76%</td>
+                <td class="val-y">1,022</td><td>1,599</td><td class="down">-36.09%</td>
+                <td class="val-y">4</td><td>10</td><td class="down">-60.0%</td>
+                <td class="val-y">5</td><td>13</td><td class="down">-61.54%</td>
+                <td class="val-y">0.39%</td><td>0.63%</td><td class="down">-38.1%</td>
             </tr><tr class="">
                 <td class="row-label">关键词推广</td>
-                <td class="val-y">454</td><td>486</td><td class="down">-6.58%</td>
-                <td class="val-y">14</td><td>8</td><td class="up">+75.0%</td>
-                <td class="val-y">15</td><td>8</td><td class="up">+87.5%</td>
-                <td class="val-y">3.08%</td><td>1.65%</td><td class="up">+86.67%</td>
-            </tr><tr class="big-change">
+                <td class="val-y">402</td><td>478</td><td class="down">-15.9%</td>
+                <td class="val-y">6</td><td>6</td><td class="neutral">0.0%</td>
+                <td class="val-y">8</td><td>8</td><td class="neutral">0.0%</td>
+                <td class="val-y">1.49%</td><td>1.26%</td><td class="up">+18.25%</td>
+            </tr><tr class="">
                 <td class="row-label">搜索</td>
-                <td class="val-y">57</td><td>36</td><td class="up">+58.33%</td>
-                <td class="val-y">4</td><td>6</td><td class="down">-33.33%</td>
-                <td class="val-y">5</td><td>6</td><td class="down">-16.67%</td>
-                <td class="val-y">7.02%</td><td>16.67%</td><td class="down">-57.89%</td>
-            </tr><tr class="big-change">
+                <td class="val-y">42</td><td>58</td><td class="down">-27.59%</td>
+                <td class="val-y">5</td><td>1</td><td class="up">+400.0%</td>
+                <td class="val-y">7</td><td>2</td><td class="up">+250.0%</td>
+                <td class="val-y">11.90%</td><td>1.72%</td><td class="up">+591.86%</td>
+            </tr><tr class="">
                 <td class="row-label">推荐</td>
-                <td class="val-y">86</td><td>50</td><td class="up">+72.0%</td>
-                <td class="val-y">4</td><td>2</td><td class="up">+100.0%</td>
-                <td class="val-y">4</td><td>2</td><td class="up">+100.0%</td>
-                <td class="val-y">4.65%</td><td>4.00%</td><td class="up">+16.25%</td>
+                <td class="val-y">37</td><td>50</td><td class="down">-26.0%</td>
+                <td class="val-y">2</td><td>1</td><td class="up">+100.0%</td>
+                <td class="val-y">2</td><td>1</td><td class="up">+100.0%</td>
+                <td class="val-y">5.41%</td><td>2.00%</td><td class="up">+170.5%</td>
             </tr><tr class="">
                 <td class="row-label">百亿补贴</td>
-                <td class="val-y">0</td><td>0</td><td class="neutral">—</td>
-                <td class="val-y">0</td><td>0</td><td class="neutral">—</td>
-                <td class="val-y">0</td><td>0</td><td class="neutral">—</td>
-                <td class="val-y">0%</td><td>0%</td><td class="neutral">—</td>
+                <td class="val-y">13</td><td>0</td><td class="neutral">—</td>
+                <td class="val-y">1</td><td>0</td><td class="neutral">—</td>
+                <td class="val-y">1</td><td>0</td><td class="neutral">—</td>
+                <td class="val-y">7.69%</td><td>0%</td><td class="neutral">—</td>
             </tr><tr class="">
                 <td class="row-label">淘宝直播</td>
-                <td class="val-y">61</td><td>42</td><td class="up">+45.24%</td>
-                <td class="val-y">9</td><td>4</td><td class="up">+125.0%</td>
-                <td class="val-y">11</td><td>4</td><td class="up">+175.0%</td>
-                <td class="val-y">14.75%</td><td>9.52%</td><td class="up">+54.94%</td>
+                <td class="val-y">46</td><td>50</td><td class="down">-8.0%</td>
+                <td class="val-y">3</td><td>4</td><td class="down">-25.0%</td>
+                <td class="val-y">3</td><td>4</td><td class="down">-25.0%</td>
+                <td class="val-y">6.52%</td><td>8.00%</td><td class="down">-18.5%</td>
             </tr></tbody>
         </table><div class="insight-block" data-uid="insight_2">
-<div class="insight" id="insight_2_original"><strong>V20F 流量洞察：</strong>最大流量渠道为<strong>人群推广</strong>（UV 1,153），推荐增长 <span class="tag up">+72.0%</span>。</div>
+<div class="insight" id="insight_2_original"><strong>V20F 流量洞察：</strong>最大流量渠道为<strong>人群推广</strong>（UV 1,022），人群推广下滑 <span class="tag down">-36.09%</span>。</div>
 <div class="insight-conclusions" id="insight_2_conclusions"></div>
 <div class="insight-edit-area" id="insight_2_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_2_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -1003,48 +1038,47 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div></div>
 </div>
-<div class="section-source">数据来源：Q2FD流量数据.xlsx / V20F流量数据.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <div class="section">
 <div class="section-title"><span class="title-group">流失情况<span class="badge">竞品流失指数 Top5</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
 <div class="chart-row">
-<div class="chart-box"><div class="chart-box-title">Q2FD 流失竞品指数 Top5</div><div class="chart-canvas"><canvas id="chart-q2fd-churn" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
-<div class="chart-box"><div class="chart-box-title">V20F 流失竞品指数 Top5</div><div class="chart-canvas"><canvas id="chart-v20f-churn" width="1170" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 585px;"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">Q2FD 流失竞品指数 Top5</div><div class="chart-canvas"><canvas id="chart-q2fd-churn"></canvas></div></div>
+<div class="chart-box"><div class="chart-box-title">V20F 流失竞品指数 Top5</div><div class="chart-canvas"><canvas id="chart-v20f-churn"></canvas></div></div>
 </div>
 <div class="subsection"><h3>Q2FD 流失竞品（昨日 vs 前日）</h3><table class="data-table"><thead><tr class="group-header"><th>#</th><th>流失型号</th><th>所属店铺</th><th>昨日流失指数</th><th>前日流失指数</th><th>环比</th></tr></thead><tbody><tr class="">
-                <td>1</td><td class="product-name">小嘀 Q2P</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">8,388.0</td><td>—</td><td class="">/</td>
+                <td>1</td><td class="product-name">德施曼 Q5FPro</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">8,007</td><td>9,271</td><td class="down">-13.63%</td>
             </tr><tr class="">
-                <td>2</td><td class="product-name">德施曼 Q5FPro</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">7,077.5</td><td>10,778.8</td><td class="down">-34.34%</td>
+                <td>2</td><td class="product-name">凯迪仕 Q2FVP V2</td><td>凯迪仕官方旗舰店</td>
+                <td class="val-y">7,416</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>3</td><td class="product-name">萤石 Y5000FVXUltra</td><td>萤石官方旗舰店</td>
-                <td class="val-y">6,800.9</td><td>—</td><td class="">/</td>
+                <td>3</td><td class="product-name">海尔</td><td>海尔全屋智慧旗舰店</td>
+                <td class="val-y">6,717</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>4</td><td class="product-name">德施曼 Q5MPro</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">5,865.4</td><td>—</td><td class="">/</td>
+                <td>4</td><td class="product-name">小嘀 Q2P</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">6,652</td><td>12,203</td><td class="down">-45.49%</td>
             </tr><tr class="">
-                <td>5</td><td class="product-name">德施曼 Q2M</td><td>德施曼智能锁旗舰店</td>
-                <td class="val-y">5,838.9</td><td>—</td><td class="">/</td>
+                <td>5</td><td class="product-name">德施曼 Q5MPro</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">6,036</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>6</td><td class="product-name">凯迪仕 Q2FVP V2</td><td>凯迪仕官方旗舰店</td>
-                <td class="val-y">5,833.8</td><td>—</td><td class="">/</td>
+                <td>6</td><td class="product-name">爵象</td><td>爵象旗舰店</td>
+                <td class="val-y">5,547</td><td>5,964</td><td class="down">-7.0%</td>
             </tr><tr class="">
-                <td>7</td><td class="product-name">德施曼 Q50F</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">5,660.8</td><td>—</td><td class="">/</td>
+                <td>7</td><td class="product-name">小嘀 Q2FV</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">5,117</td><td>7,641</td><td class="down">-33.03%</td>
             </tr><tr class="">
-                <td>8</td><td class="product-name">小嘀 Q2M</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">—</td><td>5,087.2</td><td class="">/</td>
+                <td>8</td><td class="product-name">小嘀</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">—</td><td>8,706</td><td class="">/</td>
             </tr><tr class="">
                 <td>9</td><td class="product-name">凯迪仕 Q2FV V2</td><td>凯迪仕官方旗舰店</td>
-                <td class="val-y">—</td><td>4,957.2</td><td class="">/</td>
+                <td class="val-y">—</td><td>6,142</td><td class="">/</td>
             </tr><tr class="">
-                <td>10</td><td class="product-name">凯迪仕 Q2FV V2</td><td>凯迪仕旗舰店</td>
-                <td class="val-y">—</td><td>4,523.3</td><td class="">/</td>
+                <td>10</td><td class="product-name">小嘀 Q2M</td><td>德施曼智能锁旗舰店</td>
+                <td class="val-y">—</td><td>4,738</td><td class="">/</td>
             </tr></tbody></table><div class="insight-block" data-uid="insight_3">
-<div class="insight" id="insight_3_original"><strong>Q2FD 流失洞察：</strong>昨日流失TOP：<strong>小嘀 Q2P</strong>（指数 8,388.0），前日流失TOP：<strong>德施曼 Q5FPro</strong>（指数 10,778.8），德施曼 Q5FPro环比 <span class="tag down">-34.34%</span>。</div>
+<div class="insight" id="insight_3_original"><strong>Q2FD 流失洞察：</strong>昨日流失TOP：<strong>德施曼 Q5FPro</strong>（指数 8,007），前日流失TOP：<strong>德施曼 Q5FPro</strong>（指数 9,271），小嘀 Q2P环比 <span class="tag down">-45.49%</span>。</div>
 <div class="insight-conclusions" id="insight_3_conclusions"></div>
 <div class="insight-edit-area" id="insight_3_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_3_textarea" placeholder="输入你的分析结论..."></textarea>
@@ -1057,39 +1091,39 @@ UV <span class="tag up">+27.33%</span>，
 <button class="btn-edit" onclick="startEditInsight('insight_3')">补充分析结论</button>
 </div>
 </div></div>
-    <div class="subsection"><h3>V20F 流失竞品（昨日 vs 前日）</h3><table class="data-table"><thead><tr class="group-header"><th>#</th><th>流失型号</th><th>所属店铺</th><th>昨日流失指数</th><th>前日流失指数</th><th>环比</th></tr></thead><tbody><tr class="">
-                <td>1</td><td class="product-name">萤石 DL20FVS</td><td>萤石官方旗舰店</td>
-                <td class="val-y">12,118.9</td><td>—</td><td class="">/</td>
+    <div class="subsection"><h3>V20F 流失竞品（昨日 vs 前日）</h3><table class="data-table"><thead><tr class="group-header"><th>#</th><th>流失型号</th><th>所属店铺</th><th>昨日流失指数</th><th>前日流失指数</th><th>环比</th></tr></thead><tbody><tr class="big-change">
+                <td>1</td><td class="product-name">德施曼 Q5FPro</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">9,418</td><td>4,653</td><td class="up">+102.4%</td>
             </tr><tr class="">
-                <td>2</td><td class="product-name">小嘀 Q2F</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">8,537.7</td><td>—</td><td class="">/</td>
-            </tr><tr class="big-change">
-                <td>3</td><td class="product-name">小嘀 V20F</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">7,922.0</td><td>4,461.9</td><td class="up">+77.55%</td>
+                <td>2</td><td class="product-name">小嘀 V20F</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">7,922</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>4</td><td class="product-name">德施曼 U3F</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">6,320.4</td><td>—</td><td class="">/</td>
+                <td>3</td><td class="product-name">德施曼 Q50FMax</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">6,059</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>5</td><td class="product-name">凯迪仕 Q3FVP</td><td>凯迪仕官方旗舰店</td>
-                <td class="val-y">5,347.7</td><td>—</td><td class="">/</td>
+                <td>4</td><td class="product-name">凯迪仕 P30MProMax</td><td>凯迪仕官方旗舰店</td>
+                <td class="val-y">5,039</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>6</td><td class="product-name">小嘀 Q2FV</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">5,014.5</td><td>7,266.9</td><td class="down">-31.0%</td>
+                <td>5</td><td class="product-name">小嘀 Q2FV</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">5,014</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>7</td><td class="product-name">德施曼 Q5FPro</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">4,743.9</td><td>—</td><td class="">/</td>
+                <td>6</td><td class="product-name">小嘀 V20F</td><td>德施曼品牌店</td>
+                <td class="val-y">4,881</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>8</td><td class="product-name">德施曼 Q5FPro</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">—</td><td>7,124.2</td><td class="">/</td>
+                <td>7</td><td class="product-name">小嘀 V20F</td><td>德施曼品牌官方店</td>
+                <td class="val-y">4,867</td><td>—</td><td class="">/</td>
             </tr><tr class="">
-                <td>9</td><td class="product-name">德施曼 Q5MPro</td><td>德施曼官方旗舰店</td>
-                <td class="val-y">—</td><td>3,838.2</td><td class="">/</td>
+                <td>8</td><td class="product-name">小嘀 Q2F</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">—</td><td>8,320</td><td class="">/</td>
             </tr><tr class="">
-                <td>10</td><td class="product-name">凯迪仕 S150W</td><td>凯迪仕旗舰店</td>
-                <td class="val-y">—</td><td>3,606.1</td><td class="">/</td>
+                <td>9</td><td class="product-name">小嘀 Q2P</td><td>德施曼官方旗舰店</td>
+                <td class="val-y">—</td><td>6,010</td><td class="">/</td>
+            </tr><tr class="">
+                <td>10</td><td class="product-name">凯迪仕 Q9FVPV2</td><td>凯迪仕官方旗舰店</td>
+                <td class="val-y">—</td><td>5,726</td><td class="">/</td>
             </tr></tbody></table><div class="insight-block" data-uid="insight_4">
-<div class="insight" id="insight_4_original"><strong>V20F 流失洞察：</strong>昨日流失TOP：<strong>萤石 DL20FVS</strong>（指数 12,118.9），前日流失TOP：<strong>小嘀 V20F</strong>（指数 4,461.9），小嘀 V20F环比 <span class="tag up">+77.55%</span>。</div>
-<div class="insight-conclusions" id="insight_4_conclusions"><div class="conclusion-item"><div class="conclusion-text">昨日流失萤石DL20FVS较大，同为执手款该链接新增DL20F（无猫眼指纹版）价格806低价引流，依托DL20FVS主链权重，流失较大；</div><button class="btn-delete" onclick="deleteConclusion('insight_4',0)" title="删除">✕</button></div></div>
+<div class="insight" id="insight_4_original"><strong>V20F 流失洞察：</strong>昨日流失TOP：<strong>德施曼 Q5FPro</strong>（指数 9,418），前日流失TOP：<strong>德施曼 Q5FPro</strong>（指数 4,653），德施曼 Q5FPro环比 <span class="tag up">+102.4%</span>。</div>
+<div class="insight-conclusions" id="insight_4_conclusions"></div>
 <div class="insight-edit-area" id="insight_4_edit_area" style="display:none">
 <textarea class="insight-textarea" id="insight_4_textarea" placeholder="输入你的分析结论..."></textarea>
 <div class="insight-edit-actions">
@@ -1102,7 +1136,6 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div></div>
 </div>
-<div class="section-source">数据来源：Q2FD流失数据.xlsx / V20F流失数据.xlsx（8.24 vs 8.23）</div>
 </div>
 
 <div class="footer">品旗日度销售跟进报告 | 数据来源：淘宝/天猫生意参谋 | 每日自动更新</div>
@@ -1112,16 +1145,9 @@ UV <span class="tag up">+27.33%</span>，
 <div class="section-title"><span class="title-group">今日策略动作<span class="badge">可编辑 · 自动保存</span></span><button class="section-toggle" onclick="toggleContent(this)">隐藏</button></div>
 <div class="section-content">
 <div class="insight-block" data-uid="strategy">
-<div class="insight-conclusions" id="strategy_conclusions"><div class="conclusion-item"><div class="conclusion-text">1、品旗直播间开播沟通
-2、推广端V20F今天转化较好，流量拉升
-3、其它平台价格监控，及时跟进</div><button class="btn-delete" onclick="deleteStrategy('0')" title="删除">✕</button></div></div>
+<div class="insight-conclusions" id="strategy_conclusions"></div>
 <div class="insight-edit-area" id="strategy_edit_area" style="display:none">
-<textarea class="insight-textarea" id="strategy_textarea" placeholder="输入今日策略动作...
-
-例如：
-1. Q2FD加大精准人群推广预算...
-2. V20F优化关键词出价...
-3. 关注退款率上升趋势..."></textarea>
+<textarea class="insight-textarea" id="strategy_textarea" placeholder="输入今日策略动作...&#10;&#10;例如：&#10;1. Q2FD加大精准人群推广预算...&#10;2. V20F优化关键词出价...&#10;3. 关注退款率上升趋势..."></textarea>
 <div class="insight-edit-actions">
 <button class="btn-confirm" onclick="confirmStrategy()">确认补充</button>
 <button class="btn-cancel" onclick="cancelStrategy()">取消</button>
@@ -1135,15 +1161,15 @@ UV <span class="tag up">+27.33%</span>，
 </div>
 </div>
 
+<div class="export-fab" onclick="exportReport()" title="导出含结论的报告">&#8681;</div>
 
-
-
+</div>
 
 <script>
-const trendData={"dates": ["07-26", "07-27", "07-28", "07-29", "07-30", "07-31", "08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07", "08-08", "08-09", "08-10", "08-11", "08-12", "08-13", "08-14", "08-15", "08-16", "08-17", "08-18", "08-19", "08-20", "08-21", "08-22", "08-23", "08-24"], "q2fd_uv": [8122.0, 5867.0, 3847.0, 3524.0, 5407.0, 4583.0, 4855.0, 7167.0, 5699.0, 6126.0, 5899.0, 5632.0, 5386.0, 5206.0, 5345.0, 5308.0, 4145.0, 3929.0, 4281.0, 4476.0, 3772.0, 4248.0, 4241.0, 4445.0, 4232.0, 3250.0, 2943.0, 2692.0, 2355.0, 2831.0], "v20f_uv": [3648.0, 3539.0, 3772.0, 3396.0, 3735.0, 4226.0, 3752.0, 3213.0, 4422.0, 4712.0, 4125.0, 5108.0, 5330.0, 4352.0, 5075.0, 6273.0, 4967.0, 4758.0, 4254.0, 4670.0, 3706.0, 3306.0, 3996.0, 3949.0, 3001.0, 2518.0, 2819.0, 1817.0, 1870.0, 1906.0], "q2fd_pay": [50498.55000000001, 34734.299999999996, 28085.249999999996, 31708.949999999986, 50362.10999999999, 27295.11, 24800.49000000001, 18622.87, 33037.85, 57901.340000000004, 44548.95, 37004.91, 26802.340000000007, 41710.020000000004, 43308.07000000001, 27249.990000000005, 20513.76, 36646.97, 23837.470000000005, 23373.54, 16318.59, 26319.359999999997, 15955.369999999999, 15122.0, 23993.0, 8853.73, 10482.039999999999, 11088.0, 5664.0, 29617.0], "v20f_pay": [36180.3, 45550.929999999986, 33485.38000000001, 18835.29, 16243.28, 19915.75, 10501.300000000001, 4780.83, 12402.73, 55628.58999999998, 32846.259999999995, 16377.159999999998, 27351.23, 29212.300000000003, 30733.069999999992, 30273.06999999999, 20885.98, 23604.209999999992, 14848.210000000001, 26977.249999999993, 20569.98, 18885.920000000002, 23354.6, 18484.629999999997, 5249.0, 3426.29, 13668.54, 18751.0, 14073.0, 31075.0], "q2fd_items": [68.0, 47.0, 37.0, 45.0, 69.0, 36.0, 34.0, 25.0, 50.0, 75.0, 58.0, 48.0, 35.0, 56.0, 59.0, 36.0, 27.0, 50.0, 32.0, 31.0, 22.0, 35.0, 21.0, 20.0, 32.0, 12.0, 15.0, 16.0, 8.0, 41.0], "v20f_items": [49.0, 63.0, 45.0, 25.0, 21.0, 26.0, 14.0, 7.0, 16.0, 69.0, 39.0, 19.0, 32.0, 34.0, 36.0, 35.0, 24.0, 27.0, 17.0, 31.0, 24.0, 23.0, 28.0, 21.0, 6.0, 4.0, 16.0, 23.0, 17.0, 35.0], "q2fd_ad": [3420.7100000000005, 2658.6000000000004, 2058.76, 1644.7299999999998, 2013.8900000000003, 1650.8699999999997, 1749.18, 1786.82, 2147.5899999999992, 2996.29, 3311.25, 3364.98, 2890.5200000000004, 3410.89, 3016.5, 2681.43, 2475.3800000000006, 2500.85, 2314.74, 2038.4099999999999, 1070.88, 1147.95, 1027.85, 1249.7399999999998, 1169.6899999999994, 1687.6099999999997, 1034.1399999999999, 1044.8799999999997, 647.0999999999998, 1422.3200000000002], "v20f_ad": [1255.3900000000017, 1668.7000000000005, 1747.570000000001, 1419.8400000000004, 1810.8200000000002, 1714.9400000000005, 1681.4600000000007, 1650.4100000000003, 2406.6000000000013, 2787.7200000000007, 2876.4800000000005, 2204.780000000001, 2002.4999999999995, 2087.560000000001, 2097.600000000001, 2150.39, 2263.8300000000004, 2322.7, 2448.420000000001, 2061.5, 2511.01, 2562.6699999999996, 2590.8199999999997, 1834.9299999999998, 1335.7, 964.45, 1212.4100000000003, 1089.67, 1091.3000000000002, 1350.85]};
-const channelData={"q2fd": {"names": ["\u4eba\u7fa4\u63a8\u5e7f", "\u5173\u952e\u8bcd\u63a8\u5e7f", "\u641c\u7d22", "\u63a8\u8350", "\u767e\u4ebf\u8865\u8d34", "\u6dd8\u5b9d\u76f4\u64ad"], "y_uv": [1642.0, 635.0, 154.0, 145.0, 85.0, 91.0], "d_uv": [1585.0, 288.0, 82.0, 126.0, 71.0, 84.0], "y_items": [7.0, 11.0, 11.0, 1.0, 8.0, 9.0], "d_items": [5.0, 1.0, 1.0, 2.0, 1.0, 1.0]}, "v20f": {"names": ["\u4eba\u7fa4\u63a8\u5e7f", "\u5173\u952e\u8bcd\u63a8\u5e7f", "\u641c\u7d22", "\u63a8\u8350", "\u767e\u4ebf\u8865\u8d34", "\u6dd8\u5b9d\u76f4\u64ad"], "y_uv": [1153.0, 454.0, 57.0, 86.0, 0, 61.0], "d_uv": [1173.0, 486.0, 36.0, 50.0, 0, 42.0], "y_items": [13.0, 15.0, 5.0, 4.0, 0, 11.0], "d_items": [10.0, 8.0, 6.0, 2.0, 0, 4.0]}};
-const churnData={"q2fd": {"names": ["\u5c0f\u5600 Q2P", "\u5fb7\u65bd\u66fc Q5FPro", "\u8424\u77f3 Y5000FVXUltra", "\u5fb7\u65bd\u66fc Q5MPro", "\u5fb7\u65bd\u66fc Q2M"], "y": [8387.957000490642, 7077.491153233909, 6800.903657059044, 5865.432253807705, 5838.872064786324], "d": [0, 10778.754244269403, 0, 0, 0]}, "v20f": {"names": ["\u8424\u77f3 DL20FVS", "\u5c0f\u5600 Q2F", "\u5c0f\u5600 V20F", "\u5fb7\u65bd\u66fc U3F", "\u51ef\u8fea\u4ed5 Q3FVP"], "y": [12118.857431831157, 8537.736392739542, 7921.991837613334, 6320.355749663359, 5347.702257913903], "d": [0, 0, 4461.931376311721, 0, 0]}};
-const productCmp={"labels": ["UV", "\u652f\u4ed8\u91d1\u989d", "\u652f\u4ed8\u4ef6\u6570", "\u652f\u4ed8\u4e70\u5bb6\u6570", "\u63a8\u5e7f\u6d88\u8017", "\u52a0\u8d2d\u4eba\u6570", "\u6d4f\u89c8\u91cf"], "q2fd_y": [2831.0, 29617.0, 41.0, 40.0, 1422.3200000000002, 147.0, 6517.0], "v20f_y": [1906.0, 31075.0, 35.0, 32.0, 1350.85, 145.0, 4916.0], "pay_cmp_labels": ["Q2FD\u652f\u4ed8\u91d1\u989d", "Q2FD\u652f\u4ed8\u4ef6\u6570", "V20F\u652f\u4ed8\u91d1\u989d", "V20F\u652f\u4ed8\u4ef6\u6570"], "pay_cmp_y": [29617.0, 41.0, 31075.0, 35.0], "pay_cmp_d": [5664.0, 8.0, 14073.0, 17.0]};
+const trendData={"dates": ["07-28", "07-29", "07-30", "07-31", "08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07", "08-08", "08-09", "08-10", "08-11", "08-12", "08-13", "08-14", "08-15", "08-16", "08-17", "08-18", "08-19", "08-20", "08-21", "08-22", "08-23", "08-24", "08-25", "08-26"], "q2fd_uv": [3847.0, 3524.0, 5407.0, 4583.0, 4855.0, 7167.0, 5699.0, 6126.0, 5899.0, 5632.0, 5386.0, 5206.0, 5345.0, 5308.0, 4145.0, 3929.0, 4281.0, 4476.0, 3772.0, 4248.0, 4241.0, 4445.0, 4232.0, 3250.0, 2943.0, 2692.0, 2355.0, 2831.0, 2294.0, 1975.0], "v20f_uv": [3772.0, 3396.0, 3735.0, 4226.0, 3752.0, 3213.0, 4422.0, 4712.0, 4125.0, 5108.0, 5330.0, 4352.0, 5075.0, 6273.0, 4967.0, 4758.0, 4254.0, 4670.0, 3706.0, 3306.0, 3996.0, 3949.0, 3001.0, 2518.0, 2819.0, 1817.0, 1870.0, 1906.0, 2400.0, 1734.0], "q2fd_pay": [28085.249999999996, 31708.949999999986, 50362.10999999999, 27295.11, 24800.49000000001, 18622.87, 33037.85, 57901.340000000004, 44548.95, 37004.91, 26802.340000000007, 41710.020000000004, 43308.07000000001, 27249.990000000005, 20513.76, 36646.97, 23837.470000000005, 23373.54, 16318.59, 26319.359999999997, 15955.369999999999, 15122.0, 23993.0, 8853.73, 10482.039999999999, 11088.0, 5664.0, 29617.0, 14025.710000000001, 12962.0], "v20f_pay": [33485.38000000001, 18835.29, 16243.28, 19915.75, 10501.300000000001, 4780.83, 12402.73, 55628.58999999998, 32846.259999999995, 16377.159999999998, 27351.23, 29212.300000000003, 30733.069999999992, 30273.06999999999, 20885.98, 23604.209999999992, 14848.210000000001, 26977.249999999993, 20569.98, 18885.920000000002, 23354.6, 18484.629999999997, 5249.0, 3426.29, 13668.54, 18751.0, 14073.0, 31075.0, 24585.989999999998, 21094.0], "q2fd_items": [37.0, 45.0, 69.0, 36.0, 34.0, 25.0, 50.0, 75.0, 58.0, 48.0, 35.0, 56.0, 59.0, 36.0, 27.0, 50.0, 32.0, 31.0, 22.0, 35.0, 21.0, 20.0, 32.0, 12.0, 15.0, 16.0, 8.0, 41.0, 18.0, 17.0], "v20f_items": [45.0, 25.0, 21.0, 26.0, 14.0, 7.0, 16.0, 69.0, 39.0, 19.0, 32.0, 34.0, 36.0, 35.0, 24.0, 27.0, 17.0, 31.0, 24.0, 23.0, 28.0, 21.0, 6.0, 4.0, 16.0, 23.0, 17.0, 35.0, 28.0, 24.0], "q2fd_ad": [2058.76, 1644.7299999999998, 2013.8900000000003, 1650.8699999999997, 1749.18, 1786.82, 2147.5899999999992, 2996.29, 3311.25, 3364.98, 2890.5200000000004, 3410.89, 3016.5, 2681.43, 2475.3800000000006, 2500.85, 2314.74, 2038.4099999999999, 1070.88, 1147.95, 1027.85, 1249.7399999999998, 1169.6899999999994, 1687.6099999999997, 1034.1399999999999, 1044.8799999999997, 647.0999999999998, 1422.3200000000002, 1178.75, 692.45], "v20f_ad": [1747.570000000001, 1419.8400000000004, 1810.8200000000002, 1714.9400000000005, 1681.4600000000007, 1650.4100000000003, 2406.6000000000013, 2787.7200000000007, 2876.4800000000005, 2204.780000000001, 2002.4999999999995, 2087.560000000001, 2097.600000000001, 2150.39, 2263.8300000000004, 2322.7, 2448.420000000001, 2061.5, 2511.01, 2562.6699999999996, 2590.8199999999997, 1834.9299999999998, 1335.7, 964.45, 1212.4100000000003, 1089.67, 1091.3000000000002, 1350.85, 1261.23, 945.1100000000001]};
+const channelData={"q2fd": {"names": ["\u4eba\u7fa4\u63a8\u5e7f", "\u5173\u952e\u8bcd\u63a8\u5e7f", "\u641c\u7d22", "\u63a8\u8350", "\u767e\u4ebf\u8865\u8d34", "\u6dd8\u5b9d\u76f4\u64ad"], "y_uv": [1056.0, 272.0, 163.0, 125.0, 70.0, 115.0], "d_uv": [1306.0, 400.0, 116.0, 116.0, 77.0, 87.0], "y_items": [2.0, 5.0, 2.0, 1.0, 4.0, 4.0], "d_items": [3.0, 9.0, 7.0, 0, 4.0, 7.0]}, "v20f": {"names": ["\u4eba\u7fa4\u63a8\u5e7f", "\u5173\u952e\u8bcd\u63a8\u5e7f", "\u641c\u7d22", "\u63a8\u8350", "\u767e\u4ebf\u8865\u8d34", "\u6dd8\u5b9d\u76f4\u64ad"], "y_uv": [1022.0, 402.0, 42.0, 37.0, 13.0, 46.0], "d_uv": [1599.0, 478.0, 58.0, 50.0, 0, 50.0], "y_items": [5.0, 8.0, 7.0, 2.0, 1.0, 3.0], "d_items": [13.0, 8.0, 2.0, 1.0, 0, 4.0]}};
+const churnData={"q2fd": {"names": ["\u5fb7\u65bd\u66fc Q5FPro", "\u51ef\u8fea\u4ed5 Q2FVP V2", "\u6d77\u5c14", "\u5c0f\u5600 Q2P", "\u5fb7\u65bd\u66fc Q5MPro"], "y": [8007.471616844548, 7415.515391004943, 6717.368759928599, 6651.6185964397555, 6035.739024067472], "d": [9271.245290465315, 0, 0, 12202.622887034177, 0]}, "v20f": {"names": ["\u5fb7\u65bd\u66fc Q5FPro", "\u5c0f\u5600 V20F", "\u5fb7\u65bd\u66fc Q50FMax", "\u51ef\u8fea\u4ed5 P30MProMax", "\u5c0f\u5600 Q2FV"], "y": [9418.230521563706, 7921.991837613334, 6059.052776219579, 5038.667564680018, 5014.47432245445], "d": [4653.169804494877, 0, 0, 0, 0]}};
+const productCmp={"labels": ["UV", "\u652f\u4ed8\u91d1\u989d", "\u652f\u4ed8\u4ef6\u6570", "\u652f\u4ed8\u4e70\u5bb6\u6570", "\u63a8\u5e7f\u6d88\u8017", "\u52a0\u8d2d\u4eba\u6570", "\u6d4f\u89c8\u91cf"], "q2fd_y": [1975.0, 12962.0, 17.0, 17.0, 692.45, 86.0, 4225.0], "v20f_y": [1734.0, 21094.0, 24.0, 20.0, 945.1100000000001, 100.0, 3965.0], "pay_cmp_labels": ["Q2FD\u652f\u4ed8\u91d1\u989d", "Q2FD\u652f\u4ed8\u4ef6\u6570", "V20F\u652f\u4ed8\u91d1\u989d", "V20F\u652f\u4ed8\u4ef6\u6570"], "pay_cmp_y": [12962.0, 17.0, 21094.0, 24.0], "pay_cmp_d": [14025.710000000001, 18.0, 24585.989999999998, 28.0]};
 
 const base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:11},usePointStyle:true,pointStyle:'circle',color:'#7f8c8d'}},tooltip:{mode:'index',intersect:false,backgroundColor:'rgba(44,62,80,.9)',titleFont:{size:12},bodyFont:{size:11}}},scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#95a5a6',maxRotation:45,autoSkip:true,maxTicksLimit:12}},y:{grid:{color:'#f0f3f7'},ticks:{font:{size:10},color:'#95a5a6'}}},interaction:{mode:'index',intersect:false},elements:{line:{tension:.35,borderWidth:2},point:{radius:0,hoverRadius:5}}};
 
@@ -1184,7 +1210,108 @@ btn.textContent='展示';
 }
 }
 
-var insightDateKey='8月24日';
+function formatTrendVal(val,fmt){
+if(val===0||val===null)return '—';
+if(fmt==='amount')return '¥'+Number(val).toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+if(fmt==='pct')return Number(val).toFixed(1)+'%';
+if(fmt==='rank')return '第'+Math.round(val)+'名';
+return Math.round(val).toLocaleString();
+}
+
+function drawMiniChart(canvas,vals,dates,label,invert,fmt){
+var ctx=canvas.getContext('2d');
+var W=canvas.width=canvas.offsetWidth*2;
+var H=canvas.height=canvas.offsetHeight*2;
+ctx.scale(2,2);
+var w=canvas.offsetWidth,h=canvas.offsetHeight;
+ctx.clearRect(0,0,w,h);
+var padTop=20,padBot=14,padLR=14;
+var vw=w-padLR*2,vh=h-padTop-padBot;
+if(vals.length<2){
+ctx.fillStyle='#bdc3c7';ctx.font='11px sans-serif';ctx.textAlign='center';
+ctx.fillText('数据不足',w/2,h/2);
+return;
+}
+var max=Math.max.apply(null,vals),min=Math.min.apply(null,vals);
+if(max===min){max+=1;min-=1;}
+var range=max-min;
+// Draw line
+ctx.strokeStyle='#5b8def';ctx.lineWidth=2;ctx.beginPath();
+var pts=[];
+for(var i=0;i<vals.length;i++){
+var x=padLR+vw*i/(vals.length-1);
+var y=padTop+vh*(max-vals[i])/range;
+pts.push([x,y]);
+if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+}
+ctx.stroke();
+// Fill area
+ctx.lineTo(padLR+vw,padTop+vh);ctx.lineTo(padLR,padTop+vh);
+ctx.closePath();
+ctx.fillStyle='rgba(91,141,239,.08)';ctx.fill();
+// Draw points and labels
+ctx.font='10px sans-serif';ctx.textAlign='center';
+for(var i=0;i<pts.length;i++){
+var x=pts[i][0],y=pts[i][1];
+ctx.beginPath();ctx.arc(x,y,3,0,2*Math.PI);
+ctx.fillStyle='#5b8def';ctx.fill();
+ctx.fillStyle='#2c3e50';
+ctx.fillText(formatTrendVal(vals[i],fmt),x,y-7);
+}
+// X-axis labels
+ctx.fillStyle='#95a5a6';ctx.font='9px sans-serif';
+for(var i=0;i<dates.length;i++){
+var x=padLR+vw*i/(dates.length-1);
+ctx.fillText(dates[i],x,h-2);
+}
+}
+
+function toggleKpiTrend(elem){
+var box=elem.querySelector('.kpi-trend-box');
+if(!box)return;
+if(box.style.display==='none'){
+box.style.display='block';
+var vals=JSON.parse(elem.getAttribute('data-trend')||'[]');
+var label=elem.getAttribute('data-trend-label')||'';
+var invert=elem.getAttribute('data-trend-invert')==='1';
+var fmt=elem.getAttribute('data-trend-fmt')||'int';
+var datesAttr=elem.getAttribute('data-trend-dates');
+var dates=datesAttr?JSON.parse(datesAttr):[];
+if(vals.length>=2){
+box.innerHTML='<div class="mini-trend-label">'+label+' 近'+dates.length+'天趋势</div><canvas></canvas>';
+drawMiniChart(box.querySelector('canvas'),vals,dates,label,invert,fmt);
+}else{
+box.innerHTML='<div class="mini-trend-label">暂无趋势数据</div>';
+}
+}else{
+box.style.display='none';
+}
+}
+
+function toggleProductTrend(elem){
+var row=elem.closest('tr');
+var next=row.nextElementSibling;
+if(!next||!next.classList.contains('trend-row'))return;
+if(next.style.display==='none'){
+next.style.display='';
+var vals=JSON.parse(elem.getAttribute('data-trend')||'[]');
+var dates=JSON.parse(elem.getAttribute('data-trend-dates')||'[]');
+var label=elem.getAttribute('data-trend-label')||'';
+var invert=elem.getAttribute('data-trend-invert')==='1';
+var fmt=elem.getAttribute('data-trend-fmt')||'int';
+var td=next.querySelector('td');
+if(vals.length>=2){
+td.innerHTML='<div class="mini-trend-label">'+label+' 近'+dates.length+'天趋势</div><canvas></canvas>';
+drawMiniChart(td.querySelector('canvas'),vals,dates,label,invert,fmt);
+}else{
+td.innerHTML='<div class="mini-trend-label">暂无趋势数据（仅1天）</div>';
+}
+}else{
+next.style.display='none';
+}
+}
+
+var insightDateKey='8月26日';
 
 function getConclusions(uid){
 var raw=localStorage.getItem('conclusions_'+uid);
@@ -1364,5 +1491,5 @@ document.body.removeChild(a);
 URL.revokeObjectURL(a.href);
 }
 </script>
-
-</body></html>
+</body>
+</html>
